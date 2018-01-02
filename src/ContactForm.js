@@ -2,7 +2,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 
 const ContactForm = props => {
-  const { handleSubmit } = props; // handleSubmit - method from redux-form
+  const { handleSubmit, reset } = props; // handleSubmit and reset - methods from redux-form
   return (
     <form onSubmit={handleSubmit} className="contact-form">
       <div>
@@ -35,6 +35,9 @@ const ContactForm = props => {
       <div>
         <button type="submit" className="button success">
           Send
+        </button>
+        <button type="button" className="button" onClick={reset}>
+          Reset
         </button>
       </div>
     </form>

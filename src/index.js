@@ -13,7 +13,17 @@ const rootReducer = combineReducers({
   form: formReducer,
 });
 
-const initialState = {};
+const initialState = {
+  form: {
+    // 'contact' it's dynamic form name
+    contact: {
+      values: {
+        firstName: 'Bob',
+        lastName: 'Miller',
+      },
+    },
+  },
+};
 
 const store = createStore(
   rootReducer,
