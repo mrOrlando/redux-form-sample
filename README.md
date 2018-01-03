@@ -2,6 +2,7 @@
 
 * My Simple Form Example
 * Initialize From State
+* Custom Field Component
 * [Synchronous Validation Example](https://redux-form.com/7.2.0/examples/syncvalidation/)
 
 Instructions how to launch this project:
