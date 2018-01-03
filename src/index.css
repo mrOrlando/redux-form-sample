@@ -10,6 +10,16 @@ body {
   background-color: #355474;
 }
 
+.error {
+  font-size: 13px;
+  color: red;
+}
+
+.warning {
+  font-size: 13px;
+  color: orange;
+}
+
 .contact-form {
   width: 300px;
   margin: 50px auto;
