@@ -1,9 +1,16 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import ContactPage from './ContactPage';
+import FieldArraysForm from './FieldArraysForm';
+import showResults from './showResults';
 
 class App extends PureComponent {
   render() {
-    return <ContactPage />;
+    return (
+      <Fragment>
+        <ContactPage />
+        <FieldArraysForm onSubmit={showResults} />
+      </Fragment>
+    );
   }
 }
 

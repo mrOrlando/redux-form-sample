@@ -10,6 +10,10 @@ body {
   background-color: #355474;
 }
 
+h4 {
+  margin: 5px 0;
+}
+
 .error {
   font-size: 13px;
   color: red;
@@ -20,7 +24,33 @@ body {
   color: orange;
 }
 
-.contact-form {
+.button {
+  width: 100%;
+  margin-top: 15px;
+  padding: 10px 0;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 15px;
+  border: 1px solid rgba(27, 31, 35, 0.2);
+  font-weight: bold;
+  outline: none;
+}
+
+.button.success {
+  background-color: #27ae61;
+  background-image: linear-gradient(-180deg, #34d058 0%, #28a745 90%);
+  color: #fff;
+}
+
+.button.remove {
+  background-color: #cb2431;
+  background-image: linear-gradient(-180deg, #de4450 0%, #cb2431 90%);
+  border-color: rgba(27, 31, 35, 0.5);
+  color: #fff;
+}
+
+.contact-form,
+.club-form {
   width: 300px;
   margin: 50px auto;
   padding: 10px 5px;
@@ -32,14 +62,16 @@ body {
   padding: 9px 10px 0 10px;
 }
 
-.contact-form label {
+.contact-form label,
+.club-form label {
   width: 100%;
   display: block;
   padding: 3px 0;
   color: rgb(136, 136, 136);
 }
 
-.contact-form input {
+.contact-form input,
+.club-form input {
   width: 100%;
   padding: 10px 7px;
   display: block;
@@ -47,19 +79,27 @@ body {
   border: 1px solid rgb(136, 136, 136);
 }
 
-.contact-form .button {
-  width: 100%;
-  margin-top: 15px;
-  padding: 10px 0;
-  cursor: pointer;
-  border-radius: 3px;
-  font-size: 15px;
-  border: 1px solid rgba(27, 31, 35, 0.2);
-  font-weight: bold;
+.club-form ul,
+.club-form li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
-.contact-form .success {
-  background-color: #27ae61;
-  background-image: linear-gradient(-180deg, #34d058 0%, #28a745 90%);
-  color: #fff;
+.member .header {
+  position: relative;
+  display: block;
+  height: 40px;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.member .header .remove {
+  position: absolute;
+  right: 5px;
+  top: 6px;
+  padding: 0px 5px;
+  width: 25px;
+  height: 25px;
+  margin: 0;
 }

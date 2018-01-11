@@ -4,6 +4,7 @@
 * Initialize From State
 * Custom Field Component
 * [Synchronous Validation Example](https://redux-form.com/7.2.0/examples/syncvalidation/)
+* [Field Arrays Example](https://redux-form.com/7.2.0/examples/fieldarrays/)
 
 Instructions how to launch this project:
 
