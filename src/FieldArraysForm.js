@@ -44,6 +44,7 @@ const renderMembers = ({ fields }) => {
             </button>
           </div>
           <Field
+            id={`nick-${index}`}
             name={`${member}.nick`}
             component={renderField}
             label="Nick"
@@ -60,6 +61,7 @@ const FieldArraysForm = props => {
   return (
     <form onSubmit={handleSubmit} className="club-form">
       <Field
+        id="clubName"
         name="clubName"
         component={renderField}
         label="Club Name"
