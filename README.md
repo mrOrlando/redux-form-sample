@@ -1,10 +1,11 @@
 # Redux Form Sample
 
-* My Simple Form Example
-* Initialize From State
-* Custom Field Component
-* [Synchronous Validation Example](https://redux-form.com/7.2.0/examples/syncvalidation/)
-* [Field Arrays Example](https://redux-form.com/7.2.0/examples/fieldarrays/)
+- My Simple Form Example
+- Initialize From State
+- Custom Field Component
+- [Synchronous Validation Example](https://redux-form.com/7.2.0/examples/syncvalidation/)
+- [Field Arrays Example](https://redux-form.com/7.2.0/examples/fieldarrays/)
+- [Adding reCAPTCHA](https://github.com/erikras/redux-form/issues/1880)
 
 Instructions how to launch this project:
 
