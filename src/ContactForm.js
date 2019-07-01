@@ -1,5 +1,8 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import ReCAPTCHA from 'react-google-recaptcha';
+
+const RECAPTCHA_SITE_KEY = '6LfzcqkUAAAAAIHZR9_st7SvInbZnPNVU1hMH4I6';
 
 const formatСardNumber = (value, name) => {
   if (value === undefined) {
@@ -10,12 +13,7 @@ const formatСardNumber = (value, name) => {
   return value;
 };
 
-const normalizeСardNumber = (
-  value,
-  previousValue,
-  allValues,
-  previousAllValues,
-) => {
+const normalizeСardNumber = (value, previousValue, allValues, previousAllValues) => {
   value = value.replace(/\s/g, '');
   console.log('save in store', value); // del
   return value;
@@ -46,6 +44,10 @@ const validate = values => {
     errors.cardNumber = 'Required';
   }
 
+  if (!values.captchaResponse) {
+    errors.captchaResponse = 'Filling recaptcha is required.';
+  }
+
   return errors;
 };
 
@@ -59,13 +61,7 @@ const warn = values => {
   return warnings;
 };
 
-const renderField = ({
-  id,
-  input,
-  label,
-  placeholder,
-  meta: { touched, error, warning },
-}) => {
+const renderField = ({ id, input, label, placeholder, meta: { touched, error, warning } }) => {
   return (
     <div>
       <label htmlFor={id}>{label}</label>
@@ -76,6 +72,15 @@ const renderField = ({
     </div>
   );
 };
+
+const renderCaptchaField = ({ input, meta: { touched, error, warning } }) => (
+  <div>
+    <ReCAPTCHA sitekey={RECAPTCHA_SITE_KEY} onChange={input.onChange} />
+    {touched &&
+      ((error && <span className="error">{error}</span>) ||
+        (warning && <span className="warning">{warning}</span>))}
+  </div>
+);
 
 const ContactForm = props => {
   // handleSubmit and reset - methods from redux-form
@@ -119,6 +124,7 @@ const ContactForm = props => {
         format={formatСardNumber}
         normalize={normalizeСardNumber}
       />
+      <Field name="captchaResponse" component={renderCaptchaField} />
       <div>
         <button type="submit" className="button success">
           Send
